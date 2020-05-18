@@ -2,10 +2,6 @@ package com.spring.dto;
 
 import java.io.Serializable;
 
-/**
- * @author Med
- * 3 sept. 2018
- */
 public class  JwtAuthenticationRequest implements Serializable {
 
     private static final long serialVersionUID = -8445943548965154778L;

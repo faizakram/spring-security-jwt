@@ -61,7 +61,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
-
 		httpSecurity
 				// we don't need CSRF because we store token in header
 				.csrf().disable().exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()

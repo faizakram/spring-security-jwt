@@ -15,10 +15,6 @@ import com.spring.web.exception.ErrorCodeHelper;
 import com.spring.web.exception.ErrorInfo;
 import com.spring.web.exception.ServiceException;
 
-/**
- * @author Med
- * 3 sept. 2018
- */
 @Service
 @Transactional
 public class CustomUserDetailsServiceImpl implements UserDetailsService {

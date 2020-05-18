@@ -11,9 +11,7 @@ public class CommonConstant {
 	public static final String ID = "id";
 	public static final String RESULTS = "results";
 	
-	//Query Parameter Constant
 	
-	public static final String PARAM1 = "param1";
 	//Error Message Constant
 	public static final String E1000_ERROR_CODE = "E1000-ERROR-CODE";
 	public static final String E1000_ERROR_DESCRIPTION = "E1000-ERROR-DESCRIPTION";

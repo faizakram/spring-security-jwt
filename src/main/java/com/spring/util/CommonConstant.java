@@ -10,8 +10,6 @@ public class CommonConstant {
 	public static final String COMMON_MAP_OBJECT = "COMMON_MAP_OBJECT";
 	public static final String ID = "id";
 	public static final String RESULTS = "results";
-	public static final String DATE_FORMAT_YYYY = "YYYY";
-	public static final String UNCHECKED = "unchecked";
 	
 	//Query Parameter Constant
 	

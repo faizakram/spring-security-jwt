@@ -7,9 +7,9 @@ import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
  *
@@ -17,8 +17,9 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
  */
 @Component
 @Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
-@JsonSerialize(using = ErrorInfoSerializer.class)
 @JsonInclude(value = Include.NON_NULL)
+@JsonIgnoreProperties({ "targetClass", "targetSource", "targetObject", "advisors", "frozen", "exposeProxy",
+	"preFiltered", "proxiedInterfaces", "proxyTargetClass" })
 public class ErrorInfo implements Serializable {
 
 	private static final long serialVersionUID = 67549136213141491L;

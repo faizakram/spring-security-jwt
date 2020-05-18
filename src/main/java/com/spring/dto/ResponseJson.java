@@ -7,9 +7,9 @@ import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.spring.util.CommonConstant;
 
 /**
@@ -19,8 +19,9 @@ import com.spring.util.CommonConstant;
  */
 @Component
 @JsonInclude(Include.NON_NULL)
-@JsonSerialize(using = ResponseJsonSerializer.class)
 @Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
+@JsonIgnoreProperties({ "targetClass", "targetSource", "targetObject", "advisors", "frozen", "exposeProxy",
+	"preFiltered", "proxiedInterfaces", "proxyTargetClass" })
 public class ResponseJson {
 
 	@Autowired

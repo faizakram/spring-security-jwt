@@ -13,8 +13,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.spring.dto.UserRequest;
+import com.spring.model.Employee;
 import com.spring.model.Role;
 import com.spring.model.User;
+import com.spring.repository.IEmployeeRepository;
 import com.spring.repository.IUserRepository;
 import com.spring.util.CommonConstant;
 import com.spring.web.exception.ErrorCodeHelper;
@@ -27,6 +29,8 @@ public class AuthUserDetailsService implements UserService {
 
 	@Autowired
 	private IUserRepository userRepository;
+	@Autowired
+	private IEmployeeRepository employeeRepository;
 
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -94,6 +98,11 @@ public class AuthUserDetailsService implements UserService {
 	public Long delete(Long id) {
 		userRepository.delete(getUserById(id));
 		return id;
+	}
+
+	@Override
+	public List<Employee> getEmployees() {
+		return employeeRepository.getRecentEmployeeAsPerDepartment();
 	}
 
 }

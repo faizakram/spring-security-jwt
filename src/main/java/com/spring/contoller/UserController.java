@@ -107,4 +107,14 @@ public class UserController {
 		return response;
 	}
 	
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+	@GetMapping(MappingConstant.LIST_EMP)
+	public ResponseJson getEmployees() {
+		response.setResponseDescription(CommonConstant.S0001_SUCCESS_DESCRIPTION);
+		model.put(CommonConstant.RESULTS, userService.getEmployees());
+		response.setResponse(model);
+		return response;
+	}
+
+	
 }

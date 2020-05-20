@@ -11,6 +11,7 @@ public class MappingConstant {
 	public static final String ADD = "/add";
 	public static final String COMMON_ID = "/{id}";
 	public static final String LIST = "/list";
+	public static final String LIST_EMP = "/listemp";
 	
 	public static final String UPDATE = "/update";
 	public static final String DELETE = "/delete";
